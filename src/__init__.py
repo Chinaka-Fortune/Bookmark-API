@@ -1,5 +1,5 @@
 from flask.json import jsonify
-from flask import Flask, redirect
+from flask import Flask, config, redirect
 import os
 from src.auth import auth
 from src.bookmarks import bookmarks
@@ -38,7 +38,7 @@ def create_app(test_config=None):
     Swagger(app, config=swagger_config, template=template)
     
     @app.get("/<short_url>")
-    @swag_from('./docs/short_url.yml')
+    @swag_from('./docs/short_url.yaml')
     def redirect_to_url(short_url):
         bookmark = Bookmark.query.filter_by(short_url=short_url).first_or_404()
         

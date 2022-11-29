@@ -1,4 +1,4 @@
-Redirects to a short url
+Redirect to a short url
 ---
 tags:
   - Bookmarks
@@ -9,7 +9,7 @@ parameters:
 
 responses:
   302:
-  description: Redirects to the original link
-  
+    description: Redirects to the original link
+
   404:
-  description: Record was not found
+    description: Record was not found
